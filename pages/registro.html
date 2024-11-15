@@ -9,6 +9,127 @@
       href="../images/free-heart-icon-992-thumb.png"
       type="image/x-icon"
     />
+    <link
+      rel="shortcut icon"
+      href="./images/free-heart-icon-992-thumb.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        cursor: url("../images/Normal.cur"), auto;
+        font-family: "Sour Gummy";
+      }
+      /* Cursor para enlaces */
+      a {
+        cursor: url("../images/Link.cur"), pointer;
+      }
+
+      /* Cursor para botones */
+      button {
+        cursor: url("../images/Normal.cur"), pointer;
+      }
+
+      /* Cursor al escribir texto */
+      textarea,
+      input {
+        cursor: url("../images/Text.cur"), text;
+      }
+
+      nav {
+        background-color: (255, 237, 225);
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 0 1rem;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #ffd700;
+      }
+
+      nav ul li a:last-child {
+        background-color: white;
+        color: rgb(214, 74, 121);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: 2px solid rgb(214, 74, 121);
+      }
+
+      nav ul li a:last-child:hover {
+        background-color: rgb(214, 74, 121);
+        color: white;
+      }
+      footer {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .footer-clouds {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Estilo general para todos los placeholders */
+      ::placeholder {
+        color: gray;
+        font-family: "Sour Gummy", sans-serif;
+        font-size: 15px;
+        opacity: 1;
+      }
+      input,
+      textarea {
+        font-size: 15px;
+        font-family: "Sour Gummy", sans-serif;
+      }
+      /* Estilo del select */
+      select {
+        font-family: "Sour Gummy", sans-serif;
+        font-size: 15px;
+      }
+
+      /* Estilo para la primera opción como si fuera un placeholder */
+      select option:first-child {
+        color: gray; /* Cambia el color de la primera opción */
+        font-family: "Sour Gummy", sans-serif;
+        font-size: 15px;
+        font-style: italic; /* Para hacerla más distintiva */
+      }
+
+      /* Cuando se selecciona algo, normaliza el color */
+      select option:not(:first-child) {
+        color: black; /* Para las opciones seleccionables */
+      }
+    </style>
   </head>
   <body style="background-color: rgb(255, 237, 225)">
     <header>
@@ -18,66 +139,149 @@
             <a href="../index.html">🏠✨ Inicio</a>
           </li>
           <li>
-            <a href="#">Productos</a>
+            <a href="../pages/carrito.html">Mi carrito</a>
           </li>
           <li>
-            <a href="#">Carrito</a>
+            <a href="../pages/user.html">Iniciar sesión</a>
           </li>
           <li>
-            <a href="#">LogIn</a>
+            <a href="../pages/registro.html">Crear cuenta</a>
           </li>
         </ul>
       </nav>
     </header>
-    <hr>
     <!--Contenido principal (main)-->
     <main>
       <!--Formulario-->
       <h2 style="color: rgb(214, 74, 121)">Registro nuevo usuario 💖</h2>
       <form>
         <div>
-          <label for="fname">Nombre</label>
-          <br>
-          <input type="text" name="fname" id="fname" placeholder="Escribe tu nombre completo">
+          <label for="fname">Nombre(s)</label>
+          <br />
+          <input
+            type="text"
+            name="fname"
+            id="fname"
+            placeholder="Escribe tu(s) nombre(s)"
+            required
+          />
         </div>
-        <br>
+        <br />
+        <div>
+          <label for="lname">Apellido(s)</label>
+          <br />
+          <input
+            type="text"
+            name="lname"
+            id="lname"
+            placeholder="Escribe tu(s) apellido(s)"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label for="user">Usuario</label>
+          <br />
+          <input
+            type="text"
+            name="user"
+            id="user"
+            placeholder="Usuario sin espacios"
+            pattern="^[a-zA-Z0-9_-]+$"
+            title="El usuario solo puede contener letras, números, guiones (-) y guiones bajos (_), sin espacios."
+            required
+          />
+        </div>
+        <br />
         <div>
           <label for="inputemail">Correo</label>
-          <input type="email" name="inputemail" id="inputemail" placeholder="user@correo.com">
+          <input
+            type="email"
+            name="inputemail"
+            id="inputemail"
+            placeholder="user@correo.com"
+            required
+          />
         </div>
         <br>
         <div>
+          <label for="pass">Contraseña</label>
+          <input type="password" name="pass" id="pass">
+        </div>
+        <br />
+        <div>
+          <label for="dir">Dirección</label><br />
+          <textarea
+            id="dir"
+            name="dir"
+            rows="4"
+            cols="50"
+            placeholder="Escribe tu dirección de envío aquí (puedes configurarla después)"
+          ></textarea>
+        </div>
+        <br />
+        <div>
+          <label for="telnum">Número de contacto</label>
+          <input
+            type="tel"
+            name="telnum"
+            id="telnum"
+            placeholder="10 dígitos"
+            maxlength="10"
+          />
+          <p style="font-size: 15px; color: gray;">(Puedes configurarlo después)</p>
+        </div>
+        <br />
+        <div>
           <label for="cname">País</label>
-          <select name="cname" id="cname">
+          <select name="cname" id="cname" required>
+            <option value="" disabled selected>País</option>
             <option value="arg">Argentina</option>
             <option value="chi">Chile</option>
             <option value="col">Colombia</option>
+            <option value="ecu">Ecuador</option>
+            <option value="gua">Guatemala</option>
             <option value="mex">México</option>
             <option value="per">Perú</option>
+            <option value="ven">Venezuela</option>
           </select>
         </div>
-        <br>
+        <br />
         <div>
           <p>Género</p>
-          <input type="radio" name="gender" id="male" value="hombre">
-          <label for="male"></label>Hombre<br>
-          <input type="radio" name="gender" id="female" value="mujer">
-          <label for="female"></label>Mujer<br>
-          <input type="radio" name="gender" id="other" value="otro">
-          <label for="other"></label>Otro<br>
+          <input type="radio" name="gender" id="male" value="hombre" required />
+          <label for="male"></label>Hombre<br />
+          <input type="radio" name="gender" id="female" value="mujer" />
+          <label for="female"></label>Mujer<br />
+          <input type="radio" name="gender" id="other" value="otro" />
+          <label for="other"></label>Otro<br />
         </div>
-        <br>
+        <br />
         <div>
-          <input type="checkbox" name="legalpolicy" id="legalpolicy" value="acepto">
-          <label for="legalpolicy">Aceptar términos</label><br>
+          <input
+            type="checkbox"
+            name="legalpolicy"
+            id="legalpolicy"
+            value="acepto"
+            required
+          />
+          <label for="legalpolicy">Aceptar 
+            <a href="">términos y condiciones</a></label><br />
         </div>
         <div>
-          <input type="checkbox" name="recibircorreo" id="recibircorreo" value="acepto">
-          <label for="recibircorreo">Estoy interesado(a) en recibir correos</label>
+          <input
+            type="checkbox"
+            name="recibircorreo"
+            id="recibircorreo"
+            value="acepto"
+          />
+          <label for="recibircorreo"
+            >Estoy interesado(a) en recibir correos (descuentos, novedades, premios y más)</label
+          >
         </div>
-        <br>
+        <br />
         <div>
-          <input type="submit" value="Registrarse">
+          <input type="submit" value="Registrarse" />
           <!--También puede hacerse como:
           <button type="submit> Sign Up </button>
           Incluso, dentro de Form no requiere el type"
@@ -85,11 +289,20 @@
         </div>
       </form>
     </main>
-    <hr>
     <!--Pie de página-->
     <footer>
-      <h5>Todos los derechos reservados Tienda de ternurines 💗✨</h5>
-      <img src="../images/Adaflex_clouds_12.png" alt="nubes" width="740" />
+      <h5 style="color: #d64a79">
+        Contacto: <br />
+        tiendaternurines@gmail.com <br /><img src="../images/wa.png" alt="logoWA" width="15"> (+52) 55 7380 9520
+      </h5>
+      <h5 style="color: dimgray">
+        © 2024 Tienda de ternurines 💗✨. Todos los derechos reservados.
+      </h5>
+      <img
+        src="../images/Adaflex_clouds_12.png"
+        alt="nubes"
+        class="footer-clouds"
+      />
     </footer>
   </body>
 </html>
