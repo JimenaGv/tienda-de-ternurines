@@ -11,9 +11,84 @@
     />
   </head>
   <body style="background-color: rgb(255, 237, 225)">
-    <h2 style="color: rgb(214, 74, 121)">Registro nuevo usuario 💖</h2>
-    <a href="../index.html">🏠✨ Ir al inicio</a>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">🏠✨ Inicio</a>
+          </li>
+          <li>
+            <a href="#">Productos</a>
+          </li>
+          <li>
+            <a href="#">Carrito</a>
+          </li>
+          <li>
+            <a href="#">LogIn</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr>
+    <!--Contenido principal (main)-->
+    <main>
+      <!--Formulario-->
+      <h2 style="color: rgb(214, 74, 121)">Registro nuevo usuario 💖</h2>
+      <form>
+        <div>
+          <label for="fname">Nombre</label>
+          <br>
+          <input type="text" name="fname" id="fname" placeholder="Escribe tu nombre completo">
+        </div>
+        <br>
+        <div>
+          <label for="inputemail">Correo</label>
+          <input type="email" name="inputemail" id="inputemail" placeholder="user@correo.com">
+        </div>
+        <br>
+        <div>
+          <label for="cname">País</label>
+          <select name="cname" id="cname">
+            <option value="arg">Argentina</option>
+            <option value="chi">Chile</option>
+            <option value="col">Colombia</option>
+            <option value="mex">México</option>
+            <option value="per">Perú</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <p>Género</p>
+          <input type="radio" name="gender" id="male" value="hombre">
+          <label for="male"></label>Hombre<br>
+          <input type="radio" name="gender" id="female" value="mujer">
+          <label for="female"></label>Mujer<br>
+          <input type="radio" name="gender" id="other" value="otro">
+          <label for="other"></label>Otro<br>
+        </div>
+        <br>
+        <div>
+          <input type="checkbox" name="legalpolicy" id="legalpolicy" value="acepto">
+          <label for="legalpolicy">Aceptar términos</label><br>
+        </div>
+        <div>
+          <input type="checkbox" name="recibircorreo" id="recibircorreo" value="acepto">
+          <label for="recibircorreo">Estoy interesado(a) en recibir correos</label>
+        </div>
+        <br>
+        <div>
+          <input type="submit" value="Registrarse">
+          <!--También puede hacerse como:
+          <button type="submit> Sign Up </button>
+          Incluso, dentro de Form no requiere el type"
+          -->
+        </div>
+      </form>
+    </main>
+    <hr>
+    <!--Pie de página-->
     <footer>
+      <h5>Todos los derechos reservados Tienda de ternurines 💗✨</h5>
       <img src="../images/Adaflex_clouds_12.png" alt="nubes" width="740" />
     </footer>
   </body>
